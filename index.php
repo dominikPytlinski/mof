@@ -2,6 +2,16 @@
 
 /**
  * 
+ * Reaquire and load .env variables
+ * 
+ */
+
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->load();
+
+/**
+ * 
  * Include basic config file
  * 
  */

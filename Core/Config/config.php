@@ -13,7 +13,7 @@
  */
 $GLOBALS['database'] = [
     'dbhost'        => '',
-    'dbname'        => '',
+    'dbname'        => $_ENV['DB_NAME'],
     'dbuser'        => '',
     'dbpassword'    => ''
 ];
