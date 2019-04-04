@@ -11,7 +11,7 @@
  * Require provider file
  * 
  */
-require $GLOBALS['path']['core'].'Providers/app.provider.php';
+require $GLOBALS['path']['provider'];
 
 /**
  * 

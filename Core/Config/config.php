@@ -8,24 +8,14 @@
 
 /**
  * 
- * Set GLOBAL database array
- * 
- */
-$GLOBALS['database'] = [
-    'dbhost'        => '',
-    'dbname'        => $_ENV['DB_NAME'],
-    'dbuser'        => '',
-    'dbpassword'    => ''
-];
-
-/**
- * 
  * Set GLOBAL path array
  * 
  */
 $GLOBALS['path'] = [
     'core'  => 'Core/',
-    'app'   => 'App/'
+    'app'   => 'App/',
+    'autoload'  => 'Core/autoload.php',
+    'provider'  => 'Core/Providers/app.provider.php'
 ];
 
 /**

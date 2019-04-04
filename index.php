@@ -22,4 +22,4 @@ require 'Core/Config/config.php';
  * Include autoload file
  * 
  */
-require $GLOBALS['path']['core'].'autoload.php';
+require $GLOBALS['path']['autoload'];
