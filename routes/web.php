@@ -2,4 +2,4 @@
 
 use Core\Classes\RouterCollection as Router;
 
-Router::get('/{', 'HomeController@index');
+Router::post('/', 'HomeController@index');

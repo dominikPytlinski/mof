@@ -6,12 +6,13 @@ class RouterCollection {
 
     public static function get($uri, $action)
     {
-        self::setRoute(self::prepare($uri, $action), 'GET');
+        self::setRoute(self::prepareGet($uri, $action), 'GET');
     }
 
     public static function post($uri, $action)
     {
-
+        self::setRoute(self::preaprePost($uri, $action), 'POST');
+        print_r($GLOBALS['routes']);
     }
 
     public static function put($uri, $action)
@@ -24,7 +25,26 @@ class RouterCollection {
 
     }
 
-    private function prepare($uri, $action)
+    private static function preaprePost($uri, $action)
+    {
+        $url = explode('/', $uri);
+        $actionControllerArray = explode('@', $action);
+        $controller = $actionControllerArray[0];
+        $action = $actionControllerArray[1];
+
+        if((count($url) == 3 || count($url) == 2) && (strpos($uri, '{') === false && strpos($uri, '}') === false && !empty(end($url)))) {
+            return [
+                'uri'        => $uri,
+                'controller' => $controller,
+                'action'     => $action,
+                'params'     => 0
+            ];
+        } else {
+            return false;
+        }
+    }
+
+    private static function prepareGet($uri, $action)
     {
         $url = explode('/', $uri);
         $actionControllerArray = explode('@', $action);
