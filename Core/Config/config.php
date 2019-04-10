@@ -4,6 +4,9 @@
  * 
  * Basic config file
  * 
+ * Other configutration in .env:
+ * APP_NAME, APP_URL, APP_KEY, DB_HOST, DB_NAME, DB_USER, DB_PASS
+ * 
  */
 
 /**
