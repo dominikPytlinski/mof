@@ -12,7 +12,6 @@ class RouterCollection {
     public static function post($uri, $action)
     {
         self::setRoute(self::preaprePost($uri, $action), 'POST');
-        print_r($GLOBALS['routes']);
     }
 
     public static function put($uri, $action)
