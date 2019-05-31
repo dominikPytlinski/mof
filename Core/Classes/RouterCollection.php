@@ -22,12 +22,7 @@ class RouterCollection {
                     $route['uri'] == '/' && 
                     $route['method'] == 'GET'
                 ) {
-                    return [
-                        'controller'    => $route['action']['controller'],
-                        'action'        => $route['action']['action'],
-                        'uri'           => $route['uri'],
-                        'method'        => $route['method']
-                    ];
+                    return $this->returnData($route);
                 }
             }
         } else if(count($url) == 1) {
@@ -36,12 +31,7 @@ class RouterCollection {
                     $route['uri'] == '/'.reset($url) && 
                     $route['method'] == 'GET'
                 ) {
-                    return [
-                        'controller'    => $route['action']['controller'],
-                        'action'        => $route['action']['action'],
-                        'uri'           => $route['uri'],
-                        'method'        => $route['method']
-                    ];
+                    return $this->returnData($route);
                 }
             }
         } else if(count($url) == 2) {
@@ -50,12 +40,7 @@ class RouterCollection {
                     $route['uri'] == $this->prepareUri($url) && 
                     $route['method'] == 'GET'
                 ) {
-                    return [
-                        'controller'    => $route['action']['controller'],
-                        'action'        => $route['action']['action'],
-                        'uri'           => $route['uri'],
-                        'method'        => $route['method']
-                    ];
+                    return $this->returnData($route);
                 }
             }
         } else if(count($url) > 2) {
@@ -65,14 +50,7 @@ class RouterCollection {
                     $route['method'] == 'GET' && 
                     $route['action']['action'] == end($url)
                 ) {
-                    return [
-                        'controller'    => $route['action']['controller'],
-                        'action'        => $route['action']['action'],
-                        'uri'           => $route['uri'],
-                        'method'        => $route['method']
-                    ];
-                } else {
-                    echo 'dupa';
+                    return $this->returnData($route);
                 }
             }
         }
@@ -90,6 +68,16 @@ class RouterCollection {
         } else {
             return '/'.reset($url).'/{'.reset($url).'}';
         }
+    }
+
+    protected function returnData($route)
+    {
+        return [
+            'controller'    => $route['action']['controller'],
+            'action'        => $route['action']['action'],
+            'uri'           => $route['uri'],
+            'method'        => $route['method']
+        ];
     }
 
 }
