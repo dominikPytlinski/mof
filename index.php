@@ -25,3 +25,5 @@ require 'Core/Config/config.php';
  * 
  */
 require $GLOBALS['path']['autoload'];
+
+$app = new Router();
