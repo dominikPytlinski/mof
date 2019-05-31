@@ -1,5 +1,5 @@
 <?php
 
-use Core\Classes\RouterCollection as Router;
+use Core\Classes\Router;
 
-Router::post('/', 'HomeController@index');
+Router::get('/index', 'IndexController@index');

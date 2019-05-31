@@ -8,7 +8,7 @@
  * 
  */
 return $providers = [
-    'router_collection' => 'RouterCollection',
-    'route'             => 'web',
-    'router'            => 'Router'
+    'router' => 'Router',
+    'routerCollection' => 'RouterCollection',
+    'route' => 'web'
 ];

@@ -13,6 +13,8 @@
  * 
  * Set GLOBAL path array
  * 
+ * Please set just provider parameter, you can choose - app.provider.php or api.provider.php
+ * 
  */
 $GLOBALS['path'] = [
     'core'  => 'Core/',

@@ -1,5 +1,7 @@
 <?php
 
+use Core\Classes\Router;
+
 /**
  * 
  * Reaquire and load .env variables
